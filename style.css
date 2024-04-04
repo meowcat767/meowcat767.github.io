@@ -6,6 +6,15 @@ h1{
   color: blue;
   font-family: 'Trebuchet MS';
 }
+h2 {
+  font-family: 'Trebuchet MS';
+  color: lightcoral;
+}
 body{
   background-image: url(clouds.webp);
 }
+button{
+  background-color: blue;
+  font-family: 'Trebuchet MS';
+}
+
