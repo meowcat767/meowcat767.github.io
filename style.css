@@ -1,20 +1,63 @@
+/* Main Styles */
 html {
   height: 100%;
   width: 100%;
 }
 h1{
-  color: blue;
+  color: rgb(0, 0, 0);
   font-family: 'Trebuchet MS';
 }
 h2 {
   font-family: 'Trebuchet MS';
-  color: lightcoral;
+  color: rgb(0, 0, 0);
 }
 body{
-  background-color: black;
+  background: linear-gradient(135deg, #7252e5 0%, #ac1832 100%); 
+  background-size: 400% 400%;
+  animation: animationName 13s ease infinite;
 }
 button{
   background-color: blue;
+  font-family: 'Trebuchet MS';
+}
+
+/* Navigation */
+.topnav {
+  display: flex;
+  justify-content: center;
+  background-color: #2a7cce;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Trebuchet MS';
+}
+
+
+.topnav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  font-family: 'Trebuchet MS';
+}
+
+.topnav a:hover {
+  background-color: #34495e;
+  color: white;
+  text-decoration: none;
+   font-family: 'Trebuchet MS';
+}
+
+
+
+.topnav a.active {
+  background-color: #3498db;
+  color: white;
   font-family: 'Trebuchet MS';
 }
 
