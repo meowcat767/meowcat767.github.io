@@ -133,3 +133,65 @@ button:hover {
   text-align: center;
 }
 
+/* Header Animation with Spin */
+.header {
+  opacity: 0;
+  transform: translateY(100vh) rotate(0deg);
+  animation: floatUpSpin 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes floatUpSpin {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateY(80vh) rotate(720deg);
+  }
+  40% {
+    opacity: 0.9;
+    transform: translateY(60vh) rotate(1440deg);
+  }
+  60% {
+    opacity: 0.95;
+    transform: translateY(40vh) rotate(2160deg);
+  }
+  80% {
+    opacity: 0.98;
+    transform: translateY(20vh) rotate(2880deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(3600deg);
+  }
+}
+
+/* Subtitle Animation - follows header */
+.text-center {
+  opacity: 0;
+  transform: translateY(100vh);
+  animation: followUp 1.2s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* Subheader Animation - for project directory */
+.subheader {
+  opacity: 0;
+  transform: translateY(100vh);
+  animation: followUp 1.2s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes followUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
