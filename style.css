@@ -22,6 +22,15 @@ body{
   min-height: 100vh;
   line-height: 1.6;
   font-weight: 300;
+  cursor: url('cursor/wii-cursor-by-stefano-tinaglia/Wii Cursor.cur'), auto; /* Set normal cursor as default */
+}
+
+button {
+  cursor: url('cursor/wii-cursor-by-stefano-tinaglia/wii-grab.cur'), auto; /* Set grab cursor for buttons */
+}
+
+.loading {
+  cursor: url('cursor/wii-cursor-by-stefano-tinaglia/wii-loading-ring.ani'), auto; /* Set loading cursor for loading elements */
 }
 h1{
   color: #fff;
@@ -89,6 +98,7 @@ button:hover {
   color: #f0f0f0;
   text-decoration: none;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  cursor: url('cursor/wii-cursor-by-stefano-tinaglia/wii-pointer.cur'), pointer; /* Set pointer cursor on hover */
 }
 
 .topnav a.active {
