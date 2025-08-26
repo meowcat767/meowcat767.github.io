@@ -334,8 +334,15 @@ button:hover {
 }
 
 /* Center Google Form iframe */
-.webring iframe {
+.webring .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.webring .form-container iframe {
   display: block;
-  margin: 20px auto;
   max-width: 100%;
+  border: none;
 }
