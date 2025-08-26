@@ -7,19 +7,40 @@ function draw() {
   background(random(255),random(255),random(255));
 }
 
+
+
 // Sidebar functionality and sound effects
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize visitor counter
+  updateVisitorCounter();
   const sidebar = document.querySelector('.webring-sidebar');
-  const toggleButton = document.querySelector('.floating-toggle');
+  const sidebarToggleButton = document.querySelector('.floating-toggle');
   
-  if (toggleButton) {
-    toggleButton.addEventListener('click', function() {
+  if (sidebarToggleButton) {
+    sidebarToggleButton.addEventListener('click', function() {
       if (sidebar.style.display === 'none') {
         sidebar.style.display = 'block';
         document.body.style.paddingLeft = '220px';
       } else {
         sidebar.style.display = 'none';
         document.body.style.paddingLeft = '20px';
+      }
+    });
+  }
+
+  // Chat toggle functionality
+  const chatToggleButton = document.querySelector('.chat-toggle');
+  const chatContainer = document.querySelector('.chat-container');
+  
+  if (chatToggleButton && chatContainer) {
+    chatToggleButton.addEventListener('click', function() {
+      chatContainer.classList.toggle('open');
+      
+      // Update button text/content based on state
+      if (chatContainer.classList.contains('open')) {
+        chatToggleButton.innerHTML = '✕'; // Close icon
+      } else {
+        chatToggleButton.innerHTML = '💬'; // Chat icon
       }
     });
   }

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Meowcat's thing</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://iframe.chat/scripts/main.min.js"></script>
 </head>
 
 <body>
@@ -26,6 +27,21 @@
 </map>
 <img usemap="#noairing" src="https://baccyflap.com/noai/widget.gif" style="width:250px;height:124px" alt="an image of a little blue toy robot in a red-tinted circle made of art from all over the world. there's a red line, also made of art, running through the robot. next to it are the words NO AI WEBRING / HUMAN MADE 100% GUARANTEED and then two arrows, one pointing left, one right"> 
 </div>
+<!-- Chat Container and Toggle Button -->
+<div class="chat-container">
+  <iframe src='https://iframe.chat/embed?chat=Meowchat' id='chattable' frameborder='none'></iframe>
+</div>
+
+<button class="chat-toggle">💬</button>
+
+<script>
+  // Initialize chat after DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    chattable.initialize({
+      theme : "Tendo"
+    });
+  });
+</script>
 </body>
 </html>
 

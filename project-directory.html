@@ -7,6 +7,7 @@
   <title>Meowcat's Site</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://iframe.chat/scripts/main.min.js"></script>
 </head>
 
 <body>
@@ -60,3 +61,23 @@
     <br>
     <span class="project-link"><a href="https://github.com/meowcat767/osu-taiko-midi-drums">View on GitHub</a></span>
   </div>
+
+  </div>
+
+<!-- Chat Container and Toggle Button -->
+<div class="chat-container">
+  <iframe src='https://iframe.chat/embed?chat=Meowchat' id='chattable' frameborder='none'></iframe>
+</div>
+
+<button class="chat-toggle">💬</button>
+
+<script>
+  // Initialize chat after DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    chattable.initialize({
+      theme : "Tendo"
+    });
+  });
+</script>
+  </body>
+  </html>
