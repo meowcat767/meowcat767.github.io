@@ -17,7 +17,7 @@ body{
   background-size: 400% 400%;
   animation: animationName 13s ease infinite;
   margin: 0;
-  padding: 20px 40px 20px 220px; /* Add left padding for sidebar */
+  padding: 20px 40px; /* Removed left padding for sidebar since no sidebar exists */
   color: #fff;
   min-height: 100vh;
   line-height: 1.6;
