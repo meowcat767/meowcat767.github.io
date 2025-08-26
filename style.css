@@ -260,6 +260,10 @@ button:hover {
 
 .text-center {
   text-align: center;
+  opacity: 0;
+  transform: translateY(100vh);
+  animation: followUp 1.2s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
 /* Header Animation with Spin */
@@ -297,14 +301,6 @@ button:hover {
   }
 }
 
-/* Subtitle Animation - follows header */
-.text-center {
-  opacity: 0;
-  transform: translateY(100vh);
-  animation: followUp 1.2s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
 /* Subheader Animation - for project directory */
 .subheader {
   opacity: 0;
@@ -327,4 +323,19 @@ button:hover {
 .visitor {
   text-align: center;
   border-color: #ac1832;
+}
+
+/* Center the webring list */
+#webringulist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Center Google Form iframe */
+.webring iframe {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
 }
