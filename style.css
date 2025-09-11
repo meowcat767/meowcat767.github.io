@@ -186,54 +186,65 @@ button:hover {
 }
 
 .topnav {
-  background: linear-gradient(
-    to top,
-    #2a7cce 0%,
-    #3faee5 50%,
-    #e5f6ff 60%,
-    #50e3c2 100%
-  );
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-radius: 0 0 15px 15px;
-  box-shadow: 0 4px 24px rgba(30, 98, 174, 0.3),
-    inset 0 2px 10px rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.3);
-  overflow: hidden;
-}
-
-/* Glossy Highlight */
-.topnav::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: 35%;
+  position: relative;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.7) 0%,
-    rgba(255, 255, 255, 0.25) 100%
+    #46a8f5 0%,
+    /* bright blue highlight */ #2375b8 60%,
+    /* mid blue */ #114478 100% /* dark blue base */
   );
+  background-color: #114478; /* fallback */
+  box-shadow: 0 4px 18px rgba(18, 72, 118, 0.55),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 15px 15px;
-  pointer-events: none;
-  z-index: 1;
+  overflow: hidden;
+  min-height: 60px; /* ensure height */
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.topnav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex; /* Horizontal menu */
+  align-items: center; /* Center items vertically */
+}
+
+.topnav li {
+  margin: 0 12px; /* Space between items */
+}
+
+.topnav a {
+  color: white;
+  padding: 10px 18px;
+  margin: 0 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+
+  /* Aero Glass Style */
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+  backdrop-filter: blur(8px); /* glass blur */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    /* highlight */ 0 2px 5px rgba(0, 0, 0, 0.15); /* soft shadow */
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .topnav a:hover {
-  background-color: #1a4a8a;
-  color: #f0f0f0;
-  text-decoration: none;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-  cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-pointer.cur"), pointer; /* Set pointer cursor on hover */
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 4px 10px rgba(0, 0, 0, 0.25);
+  color: #005a9e;
 }
 
-.topnav a.active {
-  background-color: #3498db;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+.topnav a:visited {
+  color: white; /* Keep same color for visited links */
+  background-color: #3498db; /* Same background for visited */
 }
 
 @keyframes fadeInUp {
@@ -354,4 +365,19 @@ button:hover {
   display: block;
   max-width: 100%;
   border: none;
+}
+
+.icon {
+  width: 16px; /* typical icon size */
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  object-fit: contain; /* Preserve aspect ratio */
 }

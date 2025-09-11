@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden; /* Optional: prevent scrollbars */
+      }
+
+      p {
+        color: black;
+      }
+
+      .fullscreen-img {
+        display: block; /* Remove default inline spacing */
+        position: fixed; /* Fix position relative to viewport */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        object-fit: cover; /* Cover entire area while keeping aspect ratio */
+        z-index: -1; /* Send behind other content */
+      }
+    </style>
+    <p class="text-center">
+      Error 700 - Site Maintainence in progress. Please standby.
+    </p>
+    <img class="fullscreen-img" src="images/404.jpg" />
+  </body>
+</html>
