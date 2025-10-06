@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <title>Meowcat's Site</title>
@@ -103,7 +103,7 @@
         Site Uptime Status
       </a>
       <a
-        href="https://meowcat767.grafana.net/goto/cf049o8hlhon4d?orgId=1"
+        href="https://meowcat767.grafana.net/public-dashboards/2d465a69e42747618b699412451ff6e5"
         class="nav-link"
       >
         <img src="icons/vista_get_started.ico" alt="Icon" class="nav-icon" />
@@ -128,7 +128,7 @@
       async function checkMaintenanceStatus() {
         try {
           const response = await fetch(
-            "https://status.meowcat.site/api/status",
+            "https://status.meowcat.site/api/status"
           );
           if (!response.ok) {
             throw new Error("Network response was not ok");
