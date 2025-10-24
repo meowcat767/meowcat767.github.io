@@ -3,491 +3,498 @@
 
 /* Main Styles */
 html {
-  height: 100%;
-  width: 100%;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+  /* Import Google Fonts */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
-body {
-  animation: animationName 13s ease infinite;
-  margin: 0;
-  padding: 20px; /* Equal padding on all sides for proper centering */
-  color: #fff;
-  min-height: 100vh;
-  line-height: 1.6;
-  font-weight: 300;
-  cursor: url("cursor/wii-cursor-by-stefano-tinaglia/Wii Cursor.cur"), auto; /* Set normal cursor as default */
-  position: relative;
-  background-image: url("images/wallpaper.jpg");
-}
-
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white overlay for glass effect */
-  backdrop-filter: blur(1px); /* Subtle blur */
-  z-index: -1;
-}
-
-/* Web Ring Sidebar */
-.webring-sidebar {
-  position: fixed;
-  left: 0;
-  top: 50px; /* Adjusted to position below the navbar */
-  width: 200px;
-  height: calc(100vh - 50px); /* Adjust height to account for navbar */
-  background: rgba(42, 124, 206, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 99;
-  overflow-y: auto;
-}
-
-.webring-sidebar h3 {
-  color: #fff;
-  margin-bottom: 15px;
-  text-align: center;
-  font-size: 1.2rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 10px;
-}
-
-.webring-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.webring-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.webring-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-pointer.cur"), pointer;
-}
-
-/* Floating Toggle Button */
-.floating-toggle {
-  position: fixed;
-  left: 10px;
-  top: 60px;
-  background: rgba(42, 124, 206, 0.9);
-  border: none;
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.floating-toggle:hover {
-  transform: scale(1.1);
-}
-
-/* Chat Toggle Button */
-.chat-toggle {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: rgba(42, 124, 206, 0.9);
-  border: none;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 100;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  font-size: 1.5rem;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chat-toggle:hover {
-  transform: scale(1.1);
-  background: rgba(52, 152, 219, 0.9);
-}
-
-/* Chat Container */
-.chat-container {
-  position: fixed;
-  right: 20px;
-  bottom: 90px; /* Position above the toggle button */
-  width: 350px;
-  height: 500px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  z-index: 99;
-  overflow: hidden;
-  transform: translateY(100vh);
-  transition: transform 0.4s ease;
-}
-
-.chat-container.open {
-  transform: translateY(0);
-}
-
-.chat-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 15px;
-}
-
-button {
-  cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-grab.cur"), auto; /* Set grab cursor for buttons */
-}
-
-.loading {
-  cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-loading-ring.ani"),
-    auto; /* Set loading cursor for loading elements */
-}
-h1 {
-  color: #fff;
-  font-weight: 700;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-h2 {
-  font-weight: 500;
-  color: #eee;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-button {
-  background: linear-gradient(135deg, #3498db, #5dade2);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 12px 24px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-grab.cur"), auto;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-button:hover {
-  background: linear-gradient(135deg, #2980b9, #48c9f0);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
-}
-
-/* Maintenance Header */
-#maintenance-header {
-  background: linear-gradient(
-    to bottom,
-    #ff6b6b 0%, /* bright red highlight */
-    #e74c3c 60%, /* mid red */
-    #c0392b 100% /* dark red base */
-  );
-  background-color: #c0392b; /* fallback */
-  box-shadow: 0 4px 18px rgba(192, 57, 43, 0.55),
-    inset 0 -2px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 15px 15px;
-  padding: 10px 20px;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  z-index: 10;
-  position: relative;
-}
-
-#maintenance-header a {
-  color: white;
-  text-decoration: underline;
-}
-
-#maintenance-header a:hover {
-  color: #ffeaa7;
-}
-
-.topnav {
-  position: relative;
-  background: linear-gradient(
-    to bottom,
-    #46a8f5 0%,
-    /* bright blue highlight */ #2375b8 60%,
-    /* mid blue */ #114478 100% /* dark blue base */
-  );
-  background-color: #114478; /* fallback */
-  box-shadow: 0 4px 18px rgba(18, 72, 118, 0.55),
-    inset 0 -2px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 15px 15px;
-  overflow: hidden;
-  min-height: 60px; /* ensure height */
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  z-index: 10;
-}
-
-.topnav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex; /* Horizontal menu */
-  align-items: center; /* Center items vertically */
-}
-
-.topnav li {
-  margin: 0 12px; /* Space between items */
-}
-
-.topnav a {
-  color: white;
-  padding: 10px 18px;
-  margin: 0 6px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-
-  /* Aero Glass Style */
-  background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
-  backdrop-filter: blur(8px); /* glass blur */
-  -webkit-backdrop-filter: blur(8px); /* Safari support */
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    /* highlight */ 0 2px 5px rgba(0, 0, 0, 0.15); /* soft shadow */
-
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.topnav a:hover {
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 4px 10px rgba(0, 0, 0, 0.25);
-  color: #005a9e;
-}
-
-.topnav a:visited {
-  color: white; /* Keep same color for visited links */
-  background-color: #3498db; /* Same background for visited */
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+  /* Main Styles */
+  html {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
   }
-  100% {
-    opacity: 1;
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    animation: animationName 13s ease infinite;
+    margin: 0;
+    padding: 20px; /* Equal padding on all sides for proper centering */
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+    font-weight: 300;
+    cursor: url("cursor/wii-cursor-by-stefano-tinaglia/Wii Cursor.cur"), auto; /* Set normal cursor as default */
+    position: relative;
+    background-image: url("images/wallpaper.jpg");
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white overlay for glass effect */
+    backdrop-filter: blur(1px); /* Subtle blur */
+    z-index: -1;
+  }
+
+  /* Web Ring Sidebar */
+  .webring-sidebar {
+    position: fixed;
+    left: 0;
+    top: 50px; /* Adjusted to position below the navbar */
+    width: 200px;
+    height: calc(100vh - 50px); /* Adjust height to account for navbar */
+    background: rgba(42, 124, 206, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  .webring-sidebar h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+  }
+
+  .webring-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .webring-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .webring-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-pointer.cur"), pointer;
+  }
+
+  /* Floating Toggle Button */
+  .floating-toggle {
+    position: fixed;
+    left: 10px;
+    top: 60px;
+    background: rgba(42, 124, 206, 0.9);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .floating-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  /* Chat Toggle Button */
+  .chat-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(42, 124, 206, 0.9);
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 1.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(52, 152, 219, 0.9);
+  }
+
+  /* Chat Container */
+  .chat-container {
+    position: fixed;
+    right: 20px;
+    bottom: 90px; /* Position above the toggle button */
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    overflow: hidden;
+    transform: translateY(100vh);
+    transition: transform 0.4s ease;
+  }
+
+  .chat-container.open {
     transform: translateY(0);
   }
-}
 
-.project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: #2a7cce;
-  border-radius: 15px;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: var(--animation-order, 0s);
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
+  .chat-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+  }
 
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-}
+  button {
+    cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-grab.cur"), auto; /* Set grab cursor for buttons */
+  }
 
-.text-center {
-  text-align: center;
-  opacity: 0;
-  transform: translateY(100vh);
-  animation: followUp 1.2s ease-out forwards;
-  animation-delay: 0.6s;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+  .loading {
+    cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-loading-ring.ani"),
+      auto; /* Set loading cursor for loading elements */
+  }
+  h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  h2 {
+    font-weight: 500;
+    color: #eee;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  button {
+    background: linear-gradient(135deg, #3498db, #5dade2);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 12px 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    cursor: url("cursor/wii-cursor-by-stefano-tinaglia/wii-grab.cur"), auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-/* Header Animation with Spin */
-.header {
-  opacity: 0;
-  transform: translateY(100vh) rotate(0deg);
-  animation: floatUpSpin 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
+  button:hover {
+    background: linear-gradient(135deg, #2980b9, #48c9f0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
 
-@keyframes floatUpSpin {
-  0% {
+  /* Maintenance Header */
+  #maintenance-header {
+    background: linear-gradient(
+      to bottom,
+      #ff6b6b 0%, /* bright red highlight */
+      #e74c3c 60%, /* mid red */
+      #c0392b 100% /* dark red base */
+    );
+    background-color: #c0392b; /* fallback */
+    box-shadow: 0 4px 18px rgba(192, 57, 43, 0.55),
+      inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 15px 15px;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+    position: relative;
+  }
+
+  #maintenance-header a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  #maintenance-header a:hover {
+    color: #ffeaa7;
+  }
+
+  .topnav {
+    position: relative;
+    background: linear-gradient(
+      to bottom,
+      #46a8f5 0%,
+      /* bright blue highlight */ #2375b8 60%,
+      /* mid blue */ #114478 100% /* dark blue base */
+    );
+    background-color: #114478; /* fallback */
+    box-shadow: 0 4px 18px rgba(18, 72, 118, 0.55),
+      inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    min-height: 60px; /* ensure height */
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .topnav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Horizontal menu */
+    align-items: center; /* Center items vertically */
+  }
+
+  .topnav li {
+    margin: 0 12px; /* Space between items */
+  }
+
+  .topnav a {
+    color: white;
+    padding: 10px 18px;
+    margin: 0 6px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+
+    /* Aero Glass Style */
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+    backdrop-filter: blur(8px); /* glass blur */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+      /* highlight */ 0 2px 5px rgba(0, 0, 0, 0.15); /* soft shadow */
+
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .topnav a:hover {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 4px 10px rgba(0, 0, 0, 0.25);
+    color: #005a9e;
+  }
+
+  .topnav a:visited {
+    color: white; /* Keep same color for visited links */
+    background-color: #3498db; /* Same background for visited */
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #2a7cce;
+    border-radius: 15px;
     opacity: 0;
-    transform: translateY(100vh) rotate(0deg);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: var(--animation-order, 0s);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
   }
-  20% {
-    opacity: 0.8;
-    transform: translateY(80vh) rotate(720deg);
-  }
-  40% {
-    opacity: 0.9;
-    transform: translateY(60vh) rotate(1440deg);
-  }
-  60% {
-    opacity: 0.95;
-    transform: translateY(40vh) rotate(2160deg);
-  }
-  80% {
-    opacity: 0.98;
-    transform: translateY(20vh) rotate(2880deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotate(3600deg);
-  }
-}
 
-/* Subheader Animation - for project directory */
-.subheader {
-  opacity: 0;
-  transform: translateY(100vh);
-  animation: followUp 1.2s ease-out forwards;
-  animation-delay: 0.6s;
-}
+  .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  }
 
-@keyframes followUp {
-  0% {
+  .text-center {
+    text-align: center;
     opacity: 0;
     transform: translateY(100vh);
+    animation: followUp 1.2s ease-out forwards;
+    animation-delay: 0.6s;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* Header Animation with Spin */
+  .header {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg);
+    animation: floatUpSpin 1.2s ease-out forwards;
+    animation-delay: 0.3s;
   }
-}
 
-.visitor {
-  text-align: center;
-  border-color: #ac1832;
-}
+  @keyframes floatUpSpin {
+    0% {
+      opacity: 0;
+      transform: translateY(100vh) rotate(0deg);
+    }
+    20% {
+      opacity: 0.8;
+      transform: translateY(80vh) rotate(720deg);
+    }
+    40% {
+      opacity: 0.9;
+      transform: translateY(60vh) rotate(1440deg);
+    }
+    60% {
+      opacity: 0.95;
+      transform: translateY(40vh) rotate(2160deg);
+    }
+    80% {
+      opacity: 0.98;
+      transform: translateY(20vh) rotate(2880deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotate(3600deg);
+    }
+  }
 
-/* Center the webring list */
-#webringulist {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+  /* Subheader Animation - for project directory */
+  .subheader {
+    opacity: 0;
+    transform: translateY(100vh);
+    animation: followUp 1.2s ease-out forwards;
+    animation-delay: 0.6s;
+  }
 
-/* Center Google Form iframe */
-.webring .form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
+  @keyframes followUp {
+    0% {
+      opacity: 0;
+      transform: translateY(100vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-.webring .form-container iframe {
-  display: block;
-  max-width: 100%;
-  border: none;
-}
+  .visitor {
+    text-align: center;
+    border-color: #ac1832;
+  }
 
-.icon {
-  width: 16px; /* typical icon size */
-  height: 16px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
+  /* Center the webring list */
+  #webringulist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-.nav-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  vertical-align: middle;
-  object-fit: contain; /* Preserve aspect ratio */
-}
+  /* Center Google Form iframe */
+  .webring .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
 
-/* Footer Aero Styling */
-footer {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 20px;
-  margin-top: 40px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+  .webring .form-container iframe {
+    display: block;
+    max-width: 100%;
+    border: none;
+  }
 
-footer hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
-  margin: 20px 0;
-}
+  .icon {
+    width: 16px; /* typical icon size */
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
 
-footer p {
-  margin: 0;
-  text-align: center;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    object-fit: contain; /* Preserve aspect ratio */
+  }
 
-footer marquee {
-  margin-top: 10px;
-}
+  /* Footer Aero Styling */
+  footer {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 
-/* Main Window Aero Styling */
-.main-window {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  padding: 30px;
-  margin: 20px auto;
-  max-width: 900px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  position: relative;
-}
+  footer hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+    margin: 20px 0;
+  }
 
-.main-window::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
-  border-radius: 15px 15px 0 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
+  footer p {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  footer marquee {
+    margin-top: 10px;
+  }
+
+  /* Main Window Aero Styling */
+  .main-window {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+  }
+
+  .main-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    border-radius: 15px 15px 0 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
