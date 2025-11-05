@@ -32,24 +32,11 @@
       >
       for updates.
     </header>
-    <div class="main-window">
-      <h1 class="text-center">Welcome!</h1>
-      <p class="text-center">There isn't much here right now.</p>
-
-      <footer>
-        <hr />
-        <p>
-          Images obtained from the
-          <a href="https://frutigeraeroarchive.org/">Frutiger Aero Archive.</a>
-          This is Version 3.
-        </p>
-
-        <marquee>
-          <img
-            src="https://frutigeraeroarchive.org/images/buttons/frutigeraeroarchive_button.png"
-          />
-        </marquee>
-      </footer>
+    <h1>Meowcat's Site</h1>
+    <p class="text-center"><em>Where do you want to go today?</em></p>
+    <ul>
+      <li><a href="home">Central Page</a></li>
+    </ul>
     </div>
     <script>
       // Fetch status from API and show maintenance header if needed
@@ -83,7 +70,7 @@
       checkMaintenanceStatus();
     </script>
     <script>
-      var redirectValue = 1;
+      var redirectValue = 0;
 
       if (redirectValue === 1) {
         // Redirect to maintain.html
